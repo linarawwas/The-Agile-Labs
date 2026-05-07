@@ -1,0 +1,78 @@
+.site {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 17px;
+}
+
+.wordmarkFull {
+  display: inline-flex;
+}
+
+.markMobile {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .wordmarkFull {
+    display: none;
+  }
+  .markMobile {
+    display: inline-flex;
+  }
+}
+
+.siteNav {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.siteNav a {
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 150ms var(--ease);
+}
+
+.siteNav a:hover {
+  color: var(--fg);
+}
+
+.book {
+  color: var(--bg) !important;
+  background: var(--fg);
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 13px !important;
+  transition: transform 150ms var(--ease), background 150ms var(--ease);
+}
+
+.book:hover {
+  background: #1a1a1a;
+}
+
+@media (max-width: 720px) {
+  .siteNav a:not(.book) {
+    display: none;
+  }
+}

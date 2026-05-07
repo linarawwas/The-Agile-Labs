@@ -1,0 +1,87 @@
+.teamGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 64px;
+}
+
+.person {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 0;
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 360px;
+  background: #f3f3f3;
+  border-radius: 999px;
+  overflow: hidden;
+  filter: grayscale(1) contrast(1.02);
+  margin-bottom: 32px;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.role {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.name {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 8px 0 20px;
+}
+
+.bio {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 50ch;
+  text-wrap: pretty;
+}
+
+.links {
+  margin-top: 24px;
+  display: flex;
+  gap: 18px;
+  font-size: 14px;
+}
+
+.links a {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 3px;
+  transition: border-color 150ms var(--ease);
+}
+
+.links a:hover {
+  border-color: var(--fg);
+}
+
+.placeholder {
+  color: var(--muted);
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}

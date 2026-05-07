@@ -1,0 +1,126 @@
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding: clamp(56px, 7vw, 96px) 0;
+  align-items: start;
+  border-top: 1px solid var(--hairline);
+}
+
+.product:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.productHead {
+  position: sticky;
+  top: 96px;
+}
+
+.productName {
+  font-size: clamp(40px, 5.4vw, 80px);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.productTag {
+  font-size: 0.5em;
+  letter-spacing: 0.04em;
+  display: block;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.productDomain {
+  color: var(--muted);
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.productStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 6px 12px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pulse {
+  width: 6px;
+  height: 6px;
+  background: var(--fg);
+  border-radius: 999px;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.pulseMuted {
+  background: var(--muted);
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.productLink {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 14px;
+  align-items: center;
+  border-bottom: 1px solid var(--hairline-strong);
+  padding-bottom: 4px;
+  transition: border-color 150ms var(--ease);
+}
+
+.productLink:hover {
+  border-color: var(--fg);
+}
+
+.productBody {
+  padding-top: 8px;
+}
+
+.productBody p {
+  font-size: var(--t-lede);
+  line-height: 1.5;
+  max-width: 50ch;
+  margin: 0 0 32px;
+  text-wrap: pretty;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 28px;
+}
+
+.tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 860px) {
+  .product {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .productHead {
+    position: static;
+  }
+}

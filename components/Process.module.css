@@ -1,0 +1,68 @@
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hairline);
+}
+
+.phase {
+  padding: 40px 28px 40px 0;
+  border-right: 1px solid var(--hairline);
+  position: relative;
+}
+
+.phase:last-child {
+  border-right: 0;
+  padding-right: 0;
+}
+
+.phase:not(:first-child) {
+  padding-left: 28px;
+}
+
+.step {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.phase h3 {
+  margin: 16px 0 12px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.phase p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+  max-width: 28ch;
+}
+
+.processNote {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.processNote .mono {
+  color: var(--fg);
+}
+
+@media (max-width: 860px) {
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+  .phase {
+    border-right: 0;
+    border-bottom: 1px solid var(--hairline);
+    padding: 28px 0 !important;
+  }
+  .phase:last-child {
+    border-bottom: 0;
+  }
+}
