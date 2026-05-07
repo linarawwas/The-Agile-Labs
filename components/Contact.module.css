@@ -13,6 +13,10 @@
   }
 }
 
+.calendlyWrap {
+  min-height: 700px;
+}
+
 .calendlyPlaceholder {
   border: 1px solid var(--hairline-strong);
   aspect-ratio: 4/5;

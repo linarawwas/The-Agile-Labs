@@ -1,9 +1,10 @@
 "use client";
 
 import ScrollReveal from "./ScrollReveal";
+import CalendlyEmbed from "./CalendlyEmbed";
 import styles from "./Contact.module.css";
 
-const WA_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "96100000000";
+const WA_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "96171950364";
 
 function val(id: string, otherId?: string): string {
   if (typeof document === "undefined") return "";
@@ -103,23 +104,9 @@ export default function Contact() {
         </ScrollReveal>
 
         <div className={styles.contactGrid}>
-          {/* Calendly placeholder */}
-          <ScrollReveal
-            className={styles.calendlyPlaceholder}
-            aria-label="Calendly embed placeholder"
-          >
-            <div className={`mono ${styles.calLabel}`}>▣ Calendly · inline embed</div>
-            <div className={styles.calBody}>
-              <h4>30-min discovery call</h4>
-              <p>
-                Use Calendly&apos;s native description field to write what
-                you&apos;d like to talk about. Goes to Google Meet. No prep
-                needed.
-              </p>
-            </div>
-            <div className={`mono ${styles.calFoot}`}>
-              <span>Replace this block with the live Calendly inline widget.</span>
-            </div>
+          {/* Calendly inline embed */}
+          <ScrollReveal className={styles.calendlyWrap}>
+            <CalendlyEmbed />
           </ScrollReveal>
 
           {/* Form */}
