@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, ReactNode } from "react";
 
-interface Props {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Props = Record<string, any> & {
   children: ReactNode;
-  className?: string;
   as?: keyof JSX.IntrinsicElements;
-}
+  className?: string;
+};
 
-export default function ScrollReveal({ children, className = "", as: Tag = "div" }: Props) {
+export default function ScrollReveal({ children, className = "", as: Tag = "div", ...rest }: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -32,8 +33,8 @@ export default function ScrollReveal({ children, className = "", as: Tag = "div"
   }, []);
 
   return (
-    // @ts-expect-error dynamic tag
-    <Tag ref={ref} className={`reveal ${className}`}>
+    // @ts-expect-error dynamic tag with generic ref
+    <Tag ref={ref} className={`reveal ${className}`} {...rest}>
       {children}
     </Tag>
   );
