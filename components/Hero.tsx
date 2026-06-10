@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
           <div>
             <span className="mono">IN PRODUCTION</span>
-            <span>TRX · 99.2% reliability</span>
+            <span>AquaOps · 99.2% reliability</span>
           </div>
           <div>
             <span className="mono">RESPONSE</span>

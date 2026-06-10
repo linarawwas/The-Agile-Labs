@@ -59,7 +59,7 @@ export default function Team() {
             <h3 className={styles.name}>Lina Rawas</h3>
             <p className={styles.bio}>
               Builds and ships The Agile Labs&apos;s production work. Architected
-              and delivered TRX — the offline-capable platform running daily
+              and delivered AquaOps — the offline-capable platform running daily
               distribution operations in South Lebanon, processing 12k+ monthly
               transactions and cutting billing reconciliation time by 40%. Owns
               each engagement end-to-end, from system design through production

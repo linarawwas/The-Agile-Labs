@@ -1,21 +1,15 @@
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import StatCounter from "./StatCounter";
 import styles from "./Products.module.css";
 
-const trxStats = [
+const aquaopsStats = [
   { to: 1, suffix: "", label: "Crews onboarded" },
   { to: 150, suffix: "+", label: "Daily work orders" },
   { to: 99.2, suffix: "%", decimals: 1, label: "Reliability" },
 ];
 
-const powerbillStats = [
-  { to: 1300, suffix: "+", format: "comma" as const, label: "Accounts being migrated" },
-  { to: 70, suffix: "%", label: "Paper reduction" },
-  { to: 1, suffix: "", label: "Operator onboarded" },
-];
-
-const trxTags = ["Delivery Management", "Full Field Control", "Mobile", "Route Accounting"];
-const powerbillTags = ["Billing", "Accounting", "Imports", "Collections", "Audit"];
+const aquaopsTags = ["Delivery Management", "Full Field Control", "Mobile", "Route Accounting"];
 
 export default function Products() {
   return (
@@ -24,7 +18,7 @@ export default function Products() {
         <ScrollReveal className="section-head">
           <span className="eyebrow">Selected work · 02</span>
           <h2 className="section-title">
-            Two systems, in production and in implementation.
+            Our flagship platform, live in production.
           </h2>
           <p className="lede">
             Client names are withheld — they have no online presence. Stat
@@ -32,12 +26,26 @@ export default function Products() {
           </p>
         </ScrollReveal>
 
-        {/* TRX */}
-        <ScrollReveal as="article" className={styles.product} id="trx">
+        {/* AquaOps */}
+        <ScrollReveal as="article" className={styles.product} id="aquaops">
           <header className={styles.productHead}>
             <h3 className={styles.productName}>
               <span className={`mono ${styles.productTag}`}>↪ PRODUCT_01</span>
-              TRX
+              <Image
+                src="/aquaops-icon.svg"
+                alt="AquaOps logo"
+                width={28}
+                height={28}
+                style={{ display: "inline-block", verticalAlign: "middle", marginRight: "0.4em" }}
+              />
+              <a
+                href="https://aquaops.app"
+                target="_blank"
+                rel="noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                AquaOps
+              </a>
             </h3>
             <div className={styles.productDomain}>
               Live operational platform for water distribution.
@@ -48,11 +56,11 @@ export default function Products() {
             </div>
             <a
               className={styles.productLink}
-              href="https://trx.theagilelabs.com"
+              href="https://aquaops.app"
               target="_blank"
               rel="noreferrer"
             >
-              Visit TRX <span aria-hidden="true">↗</span>
+              Visit AquaOps <span aria-hidden="true">↗</span>
             </a>
           </header>
           <div className={styles.productBody}>
@@ -61,39 +69,9 @@ export default function Products() {
               field, and customer comms over WhatsApp — running operations for a
               regional distributor in South Lebanon.
             </p>
-            <StatCounter stats={trxStats} />
+            <StatCounter stats={aquaopsStats} />
             <div className={styles.tagRow}>
-              {trxTags.map((t) => (
-                <span key={t} className={styles.tag}>{t}</span>
-              ))}
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* PowerBill */}
-        <ScrollReveal as="article" className={styles.product} id="powerbill">
-          <header className={styles.productHead}>
-            <h3 className={styles.productName}>
-              <span className={`mono ${styles.productTag}`}>↪ PRODUCT_02</span>
-              PowerBill
-            </h3>
-            <div className={styles.productDomain}>
-              Billing and accounting platform for electricity distribution.
-            </div>
-            <div className={`${styles.productStatus} ${styles.muted}`}>
-              <span className={`${styles.pulse} ${styles.pulseMuted}`} />
-              <span>In implementation · South Lebanon</span>
-            </div>
-          </header>
-          <div className={styles.productBody}>
-            <p>
-              A regional electricity operator is migrating customer accounts and
-              historical balances from a legacy system into PowerBill ahead of
-              cutover. Multi-currency books, collections, and audit ship with it.
-            </p>
-            <StatCounter stats={powerbillStats} />
-            <div className={styles.tagRow}>
-              {powerbillTags.map((t) => (
+              {aquaopsTags.map((t) => (
                 <span key={t} className={styles.tag}>{t}</span>
               ))}
             </div>
